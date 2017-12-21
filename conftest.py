@@ -1,6 +1,7 @@
 from fixture.application import Application
 import pytest
 import json
+import os.path
 
 
 configfile = None
@@ -8,8 +9,9 @@ configfile = None
 def run_app(request):
     global configfile
     run_browser = request.config.getoption("--browser")
-    if configfile == None:
-        with open(request.config.getoption("--configfile")) as config_file:
+    if configfile is None:
+        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)),request.config.getoption("--configfile"))
+        with open(config_file) as config_file:
             configfile = json.load(config_file)
     fixture = Application(browser=run_browser, base_url=configfile["baseUrl"])
     return fixture
