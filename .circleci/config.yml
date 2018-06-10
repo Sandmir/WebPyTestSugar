@@ -62,7 +62,8 @@ jobs:
             ls
             echo "++++++++ test report +++++++"
             ls 
-            allure generate -o allure-results/h --clean 
+            cd /allure2/allure-2.6.0/bin/
+            allure generate -o /home/circleci/repo/allure-results/h --clean 
 
 
       - store_artifacts:
