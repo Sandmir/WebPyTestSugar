@@ -33,7 +33,7 @@ jobs:
              wget https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.6.0/allure-2.6.0.zip
              mkdir allure2
              unzip allure-2.6.0.zip -d allure2
-             export PATH=$PATH: ./allure2/allure-2.6.0/bin/
+             export PATH=$PATH: ~/allure2/allure-2.6.0/bin/
              ls -al
              echo PATH
              echo "==========================="
@@ -59,6 +59,9 @@ jobs:
           command: |
             . venv/bin/activate
             pytest test/test_login.py -s --alluredir allure-results
+            cd ~/allure2/allure-2.6.0/bin/
+            echo "++++++++ test report +++++++"
+            ls 
             allure generate -o allure-results/h --clean 
 
 
