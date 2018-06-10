@@ -34,7 +34,8 @@ jobs:
              mkdir allure2
              unzip allure-2.6.0.zip -d allure2
              ls -al
-             echo PATH
+             export PATH=/allure2/allure-2.6.0/bin/:$PATH
+             echo $PATH
              echo "==========================="
              python3 -m venv venv
              . venv/bin/activate
@@ -59,12 +60,11 @@ jobs:
             . venv/bin/activate
             pytest test/test_login.py -s --alluredir allure-results
             ls
-            cd allure2/allure-2.6.0/bin/
             echo "++++++++ test report +++++++"
             ls 
-            allure generate -o ~/allure-results/h --clean 
+            allure generate -o allure-results/h --clean 
 
 
       - store_artifacts:
-          path: allure-results
+          path: allure-results/h
           destination: allure-results
