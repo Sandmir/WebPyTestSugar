@@ -31,7 +31,9 @@ jobs:
           name: install dependencies
           command: |
              wget https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.6.0/allure-2.6.0.zip
-             gzip  allure-2.6.0.zip
+             mkdir allure2
+             unzip allure-2.6.0.zip -d allure2
+             cd allure2
              ls -al
              echo "==========================="
              python3 -m venv venv
