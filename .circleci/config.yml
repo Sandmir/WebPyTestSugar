@@ -23,7 +23,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
+          - v1-dependencies-{{ checksum "requirments.txt" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
@@ -31,7 +31,7 @@ jobs:
           name: install dependencies
           command: |
              pip3 install virtualenv
-             virtualenv --version
+             echo virtualenv --version
              virtualenv env
              source env/bin/activate
              pip3 install -r requirments.txt
