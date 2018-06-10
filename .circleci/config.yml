@@ -34,7 +34,7 @@ jobs:
              mkdir allure2
              unzip allure-2.6.0.zip -d allure2
              ls -al allure2/allure-2.6.0/bin
-             export PATH=/allure2/allure-2.6.0/bin/:$PATH
+             export PATH=/allure2/allure-2.6.0/bin/allure:$PATH
              echo $PATH
              echo "==========================="
              python3 -m venv venv
