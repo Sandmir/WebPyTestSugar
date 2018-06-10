@@ -8,9 +8,9 @@ class Application:
 
     def __init__(self, browser, base_url):
         if browser == 'firefox':
-            self.driver = webdriver.Firefox(executable_path='/Applications/Python 3.5/geckodriver')
+            self.driver = webdriver.Firefox()
         elif browser == 'chrome':
-            self.driver = webdriver.Chrome(executable_path='/Applications/Python 3.5/chromedriver')
+            self.driver = webdriver.Chrome()
         else:
             raise ValueError("Unrecognized browser: %s" % browser)
         self.base_url = base_url
