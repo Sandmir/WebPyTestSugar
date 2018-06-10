@@ -32,7 +32,8 @@ jobs:
           command: |
              python3 -m venv venv
              . venv/bin/activate
-             pip install -r repo/requirements.txt
+             ls -al
+             pip install -r ./requirements.txt
              mkdir allure-results
 
       - save_cache:
