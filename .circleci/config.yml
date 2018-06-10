@@ -35,6 +35,7 @@ jobs:
              ls -al
              pip install -r requirments.txt
              mkdir allure-results
+             mkdir allure-results/h
 
       - save_cache:
           paths:
