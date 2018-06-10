@@ -31,8 +31,8 @@ jobs:
           name: install dependencies
           command: |
              python3 -m venv venv
-             venv/bin/activate
-             pip install -r requirements.txt
+             . venv/bin/activate
+             pip install -r repo/requirements.txt
              mkdir allure-results
 
       - save_cache:
@@ -48,7 +48,7 @@ jobs:
       - run:
           name: run tests login
           command: |
-            venv/bin/activate
+            . venv/bin/activate
             pytest test/test_login.py -s --alluredir allure-results
             allure generate -o allure-results/h --clean 
 
