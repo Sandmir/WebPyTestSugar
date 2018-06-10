@@ -30,6 +30,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
+             pip install --upgrade pip
              pip install virtualenv
              echo virtualenv --version
              virtualenv env
