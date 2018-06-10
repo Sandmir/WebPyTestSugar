@@ -37,6 +37,7 @@ jobs:
              export PATH=/allure2/allure-2.6.0/bin/allure:$PATH
              echo $PATH
              echo "==========================="
+             npm install -g allure-commandline --save-dev
              python3 -m venv venv
              . venv/bin/activate
              ls -al
@@ -62,8 +63,7 @@ jobs:
             ls
             echo "++++++++ test report +++++++"
             ls 
-            cd /allure2/allure-2.6.0/bin/
-            allure generate -o /home/circleci/repo/allure-results/h --clean 
+            allure generate -o allure-results/h --clean 
 
 
       - store_artifacts:
