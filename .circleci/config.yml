@@ -30,6 +30,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
+             wget https://github.com/allure-framework/allure2/archive/2.6.0.tar.gz
+             tar -xvzf 2.6.0.tar.gz
+             rm 2.6.0.tar.gz
              python3 -m venv venv
              . venv/bin/activate
              ls -al
