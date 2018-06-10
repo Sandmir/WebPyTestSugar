@@ -30,9 +30,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
-             wget https://github.com/allure-framework/allure2/archive/2.6.0.tar.gz
-             tar -xvzf 2.6.0.tar.gz
-             rm 2.6.0.tar.gz
+             wget https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.6.0/allure-2.6.0.zip
+             tar -xvzf allure-2.6.0.zip
+             rm allure-2.6.0.zip
              python3 -m venv venv
              . venv/bin/activate
              ls -al
