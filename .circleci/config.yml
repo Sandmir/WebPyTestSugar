@@ -30,17 +30,14 @@ jobs:
       - run:
           name: install dependencies
           command: |
-             pip install --upgrade pip
-             pip install virtualenv
-             echo virtualenv --version
-             virtualenv env
-             source env/bin/activate
-             pip install -r requirments.txt
+             python3 -m venv venv
+             . venv/bin/activate
+             pip install -r requirements.txt
              mkdir allure-results
 
       - save_cache:
           paths:
-            - ./env
+            - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
         
       # run tests!
@@ -51,7 +48,7 @@ jobs:
       - run:
           name: run tests login
           command: |
-            source env/bin/activate
+            . venv/bin/activate
             pytest test/test_login.py -s --alluredir allure-results
             allure generate -o allure-results/h --clean 
 
