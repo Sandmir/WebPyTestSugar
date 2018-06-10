@@ -46,6 +46,6 @@ def app(request):
     return fixture
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action = "store", default = "firefox")
+    parser.addoption("--browser", action = "store", default = "chrome")
     parser.addoption("--configfile", action="store", default= "configfile.json")
 
