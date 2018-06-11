@@ -30,9 +30,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
-             wget https://bintray.com/qameta/generic/download_file?file_path=io%2Fqameta%2Fallure%2Fallure%2F2.6.0%2Fallure-2.6.0.tgz
-             mkdir allure2		 
-             tar -xvzf allure-2.6.0.tgz -d allure-commandline		
+             wget https://github.com/allure-framework/allure2/archive/2.6.0.zip
+             mkdir allure-commandline		 
+             unzip 2.6.0.zip -d allure-commandline		
              export PATH=/allure-commandline/allure-2.6.0/bin/allure:$PATH
              echo $PATH
              echo allure --version
