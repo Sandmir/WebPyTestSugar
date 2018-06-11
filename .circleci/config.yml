@@ -30,10 +30,12 @@ jobs:
       - run:
           name: install dependencies
           command: |
-             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-             brew tap qameta/allure
-             brew install allure
+             wget https://bintray.com/qameta/generic/download_file?file_path=io%2Fqameta%2Fallure%2Fallure%2F2.6.0%2Fallure-2.6.0.tgz
+             mkdir allure2		 
+             tar -xvzf allure-2.6.0.tgz -d allure-commandline		
+             export PATH=/allure-commandline/allure-2.6.0/bin/allure:$PATH
              echo $PATH
+             echo allure --version
              echo "==========================="
              python3 -m venv venv
              . venv/bin/activate
