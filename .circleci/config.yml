@@ -30,6 +30,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
+             java --version
              wget https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.6.0/allure-2.6.0.zip
              mkdir allure-commandline		 
              unzip allure-2.6.0.zip -d allure-commandline		
@@ -39,6 +40,7 @@ jobs:
              cd  allure-commandline/allure-2.6.0/bin/
              echo "====== allure ===="
              ls -al
+             chmod 777 allure
              allure --help
              allure --version
              echo "==========================="
