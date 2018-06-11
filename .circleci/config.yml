@@ -38,7 +38,7 @@ jobs:
              ls 
              cd  allure-commandline/allure-2.6.0/bin/
              echo "====== allure ===="
-             ls
+             ls -al
              allure --help
              allure --version
              echo "==========================="
