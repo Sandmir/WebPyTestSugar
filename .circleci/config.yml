@@ -30,6 +30,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
+             /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
              brew tap qameta/allure
              brew install allure
              echo $PATH
