@@ -35,7 +35,8 @@ jobs:
              unzip allure-2.6.0.zip -d allure-commandline		
              export PATH=/allure-commandline/allure-2.6.0/bin/allure:$PATH
              echo $PATH
-             cd /allure-commandline/allure-2.6.0/bin
+             ls 
+             cd  allure-commandline/allure-2.6.0/bin/
              allure --help
              allure --version
              echo "==========================="
