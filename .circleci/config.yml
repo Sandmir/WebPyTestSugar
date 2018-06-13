@@ -10,6 +10,7 @@ jobs:
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1-browsers
       - image: circleci/openjdk:8-jdk-browsers
+      - image: debian:stable 
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -30,7 +31,10 @@ jobs:
 
       - run:
           name: install dependencies
-          command: |       
+          command: |   
+             sudo apt-add-repository ppa:qameta/allure
+             sudo apt-get update 
+             sudo apt-get install allure
              echo "==========================="
              python3 -m venv venv
              . venv/bin/activate
