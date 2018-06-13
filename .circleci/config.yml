@@ -30,17 +30,14 @@ jobs:
 
       - run:
           name: install dependencies
-          command: |        
-             sudo apt-add-repository ppa:qameta/allure
-             sudo apt-get update 
-             sudo apt-get install allure         
-             allure --version
+          command: |       
              echo "==========================="
              python3 -m venv venv
              . venv/bin/activate
              ls -al
              pip install -r requirments.txt
              pip install pytest-allure-adaptor
+             allure --version
              mkdir allure-results
              mkdir allure-results/h
 
